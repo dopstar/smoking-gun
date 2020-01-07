@@ -15,10 +15,12 @@ script:
 - bandit -r smoking_gun
 - py.test  --cov smoking_gun --cov-report term-missing tests
 after_success:
-- codecov --token=
+- codecov --token=bf663cbb-9c94-4df4-a8fd-2979eef5ba51
 deploy:
   provider: pypi
   user: dopstar
   true:
     tags: true
   skip_existing: true
+password:
+  secure: CWWY2Cotn16c+tJLxHkSuQ4hDqxM2X+Mg72xJCgbHAA+2K9sBJveqeviCnfSf4ZPNWyNn8XWabRXis0Z2Gqm+E/PwXVX78ZKGXpBd3UcNFpFGHcUlPOnkitk422ZlzFl/JkM9dY3riejyHdY3nq29TnyAv3A2Ej7ViZZ3FyNcYEX/iDoW5sKhuDDL8sU0eKuJn4vikEzZq6xWKpGwU2tZP9oCQ0QTmGsktZ/a2M/KPyCqcflkOtvGEWeJfR4TAiTf7XTzqxogtkpO3AGUXcugHJVQPoF5ZBmd1n6DCO42//2AZSOc5Zt8n4aUMANWPTsMnfFSmvlzEfDufFte4FnBdHOXQUKGeJxacCXwfH2m5I6UxHi4wBpxcuKPGR8GViw80KEPYFeHZyqT5y38tfqpb4HcszMNS9Ho3gKf6F5yijQhkAE3Zce+CLs3zwHL2f/MozkiMcjSobBBjnxGdX5+GwsnjXdIQnvdukRPxgDUAmHHM9RRA5KIGWUvaJVCKzJQIm2oKJUp7UUdM3JjYkSyuktj9AWpIvFKvCz1OXNpCczBMxddTBuqLyGM7zYUUvQ40eVDBJ7dLwD+U7fUw4mjycuHJ6RdEY+zrOeExFbhkuWlGMoGAcH3IlpwBzbea+6jM8wOgK6G9263OS8bhbwi8hdgigcjRsLE7eGDLsvxgs=
