@@ -1,5 +1,7 @@
 import logging
 from collections import deque
+
+
 try:
     from StringIO import StringIO
 except ImportError:
@@ -12,7 +14,7 @@ class CapturedLogging(object):
         self.__log_kwargs = {}
 
     def __enter__(self):
-        self.__log_kwargs['stream'] = StringIO()
+        self.__log_kwargs["stream"] = StringIO()
         if logging.root and logging.root.handlers:
             for handler in logging.root.handlers:
                 self._copy_handler(handler)
@@ -22,7 +24,7 @@ class CapturedLogging(object):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         logs = self.get_logs()
-        del self.__log_kwargs['stream']
+        del self.__log_kwargs["stream"]
         if self.__handlers:
             for handler in logging.root.handlers:
                 logging.root.removeHandler(handler)
@@ -32,11 +34,11 @@ class CapturedLogging(object):
 
     def get_logs(self):
         try:
-            stream = self.__log_kwargs['stream']
+            stream = self.__log_kwargs["stream"]
             stream.seek(0)
             return stream.read()
         except KeyError:
-            return ''
+            return ""
 
     def _copy_handler(self, handler):
         if self.__log_kwargs.get("format") is None:
