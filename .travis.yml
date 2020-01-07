@@ -1,0 +1,24 @@
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+- '3.7'
+- '3.8'
+sudo: false
+install:
+- pip install -U pip setuptools
+- pip install .[testing,linting]
+script:
+- flake8 .
+- bandit -r smoking_gun
+- py.test  --cov smoking_gun --cov-report term-missing tests
+after_success:
+- codecov --token=
+deploy:
+  provider: pypi
+  user: dopstar
+  true:
+    tags: true
+  skip_existing: true
