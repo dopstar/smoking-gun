@@ -8,8 +8,14 @@
 
 This is a python library that has basic tools for log capturing.
 
+## Installation
 
-## Examples
+```shell
+pip install smoking-gun
+```
+
+
+## Example
 
 ```python
 import logging

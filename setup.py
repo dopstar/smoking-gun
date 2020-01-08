@@ -1,7 +1,7 @@
 from setuptools import setup
 
 
-version = "1.0.0"
+version = "1.0.1"
 url = "https://github.com/dopstar/smoking-gun"
 
 if "a" in version:
@@ -46,7 +46,7 @@ setup(
     author_email="mmadlavana@gmail.com",
     url=url,
     download_url="{url}/archive/{version}.tar.gz".format(url=url, version=version),
-    description="The log tracing library.",
+    description="The log capturing library.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT License",
