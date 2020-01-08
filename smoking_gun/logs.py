@@ -46,5 +46,7 @@ class CapturedLogging(object):
         if self.__log_kwargs.get("datefmt") is None:
             self.__log_kwargs["datefmt"] = handler.formatter.datefmt
         if self.__log_kwargs.get("level") is None:
-            self.__log_kwargs["level"] = handler.level if handler.level < logging.DEBUG else logging.DEBUG
+            self.__log_kwargs["level"] = (
+                handler.level if handler.level < logging.DEBUG else logging.DEBUG
+            )
         self.__handlers.append(handler)
