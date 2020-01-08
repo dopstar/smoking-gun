@@ -12,6 +12,7 @@ class CapturedLogging(object):
     def __init__(self):
         self.__handlers = deque([])
         self.__log_kwargs = {}
+        self.logs = None
 
     def __enter__(self):
         self.__log_kwargs["stream"] = StringIO()
@@ -23,16 +24,15 @@ class CapturedLogging(object):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        logs = self.get_logs()
+        self.logs = self._read_logs()
         del self.__log_kwargs["stream"]
         if self.__handlers:
             for handler in logging.root.handlers:
                 logging.root.removeHandler(handler)
             for handler in self.__handlers:
                 logging.root.addHandler(handler)
-        return logs
 
-    def get_logs(self):
+    def _read_logs(self):
         try:
             stream = self.__log_kwargs["stream"]
             stream.seek(0)
