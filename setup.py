@@ -46,7 +46,7 @@ setup(
     author_email="mmadlavana@gmail.com",
     url=url,
     download_url="{url}/archive/{version}.tar.gz".format(url=url, version=version),
-    description="The log tracing library."),
+    description="The log tracing library.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT License",
