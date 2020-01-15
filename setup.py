@@ -1,7 +1,7 @@
 from setuptools import setup
 
 
-version = "1.0.1"
+version = "1.0.2"
 url = "https://github.com/dopstar/smoking-gun"
 
 if "a" in version:
