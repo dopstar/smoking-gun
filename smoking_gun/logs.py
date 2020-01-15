@@ -61,4 +61,3 @@ class CapturedLogging(object):
     @property
     def logs(self):
         return "".join(self._logs)
-
